@@ -14,8 +14,8 @@ This module explains operating systems and linux basics
   resources from the Host OS, like a server. The second type is known as a type 1 which sits directly on the baremetal hypervisor. This is typically 
   used on large systems within a corporation, used for hosting VMWare ESXi, Microsoft Hyper-v, etc. Once either of these models are setup one or more 
   VMs can be deployed and an OS provisioned for the user to install products of their choice and utilize tools such as: CLI, SSH, IDEs and scripts to 
-  automate manual processes to make them available for reuse.
+  automate manual processes to make them available for reuse.  
 
 # Technologies Used:
 
-  Cloud Provider - Virtual Box
+  Cloud Provider - Digital Ocean was used as the easiest path for the MacOS.
