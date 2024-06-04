@@ -7,8 +7,8 @@ This module explains operating systems and linux basics
 
 # Description: 
 
-  In this chapter we learn the essentials about the Linux operating system and the tools that are required to administer the machine. Additionally, we  
-  will demonstrate how to use some of the tools required to build and maintain a Linux system, utilizing the command line interface (CLI), as well as
+  In this chapter we learn the essentials about the Linux operating system and the tools that are required to administer the machine. We will
+  demonstrate how to use some of the tools required to build and maintain a Linux system, utilizing the command line interface (CLI), as well as
   the various tools available to read and write files and configure the environment. This chapter introduces the concept of virtualization, used to
   host new systems on top of the OS of a physical machine, such as your laptop. This is known as a type 2 hypervisor. These are guests VMs who borrow 
   resources from the Host OS, like a server. The second type is known as a type 1 which sits directly on the baremetal hypervisor. This is typically 
