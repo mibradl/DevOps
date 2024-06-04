@@ -18,4 +18,4 @@ This module explains operating systems and linux basics
 
 # Technologies Used:
 
-  Cloud Provider - Digital Ocean was used as the easiest path for the MacOS.
+  Cloud Provider - Digital Ocean was used as the easiest path for the MacOS, as it doesn't require resources.
