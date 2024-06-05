@@ -1,4 +1,4 @@
-# DevOpsChapter2
+# Chapter2
 This module explains operating systems and linux basics
 
 # Name: Operating Systems and Linux Basics
