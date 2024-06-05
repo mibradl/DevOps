@@ -1,7 +1,7 @@
 # Chapter2
 This module explains operating systems and linux basics
 
-# Name: Operating Systems and Linux Basics
+# Name: Creating Virtual Machines
 
 
 # Description: 
