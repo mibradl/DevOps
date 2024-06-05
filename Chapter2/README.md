@@ -4,7 +4,6 @@ This module explains operating systems and linux basics
 # Name: Operating Systems and Linux Basics
 
 
-
 # Description: 
 
   In this chapter we learn the essentials about the Linux operating system and the products that are required to administer the machine. We will
