@@ -22,7 +22,7 @@ This module explains operating systems and linux basics
 
 # Usage
 
-  For demo exercise created Ubuntu version 20.0.4 on Digital Ocean
+  For demo exercise created Ubuntu version 20.04 on Digital Ocean
 
   root@web-server:~# cat /etc/os-release 
   NAME="Ubuntu"
