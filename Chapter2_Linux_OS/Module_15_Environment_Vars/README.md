@@ -46,7 +46,7 @@ my = mysql.connector.connect(
   password=DB_PWD
 )
 
-Note: this is a python examplet
+Note: this is a python example
 
 Makes the application more flexible.
 
