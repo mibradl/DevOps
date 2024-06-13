@@ -1,4 +1,4 @@
-# Chapter2
+# Chapter3
 This module we reviewed how to initialize a project locally.
 
 # Name: Initialize a Git Project Locally
