@@ -1,5 +1,5 @@
 # Chapter3
-This module will discuss resolving merge conflicts.
+In this module we discuss resolving merge conflicts.
 
 # Name: Resolving Merge Conflicts
 
