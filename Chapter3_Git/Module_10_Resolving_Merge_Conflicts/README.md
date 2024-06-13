@@ -15,7 +15,9 @@ You must tell Git which change to take.
 
 This can be performed in the editor like VSCode or Intellij via the diff screen prompt, which shows each change the users made that are conflicting. Select which change to keep and continue with the commit and push via the tool prompts.
 
+From the command-line you can perform the following:
 
+git rebase --continue
 
 
 
