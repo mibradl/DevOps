@@ -106,7 +106,7 @@ Pipeline is triggered whenever feature/bugfix code is merged into master
 
 test => build => deploy  -  continuous delivery
 
-Deploying every single featuer/bugfix to at least staging server
+Deploying every single feature/bugfix to at least staging server
 
 
 
@@ -121,7 +121,7 @@ Develop branch often becomes "work in progress" branch
 Best Practice in DevOps
 
 1. CI/CD
-2. Trunk approach
+2. Trunk Based approach
 3. No intermediary develop branch
 
 Important to know there are different ways to Git workflows companies use
