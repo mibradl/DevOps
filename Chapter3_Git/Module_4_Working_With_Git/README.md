@@ -11,7 +11,7 @@ Working Directory - git add . to promote to staging area.
 
 Staging Area - once in the staging directory a commit will move the change to the local repo.
 
-Local Repository - once committed performing the push with move the change to the remote repo.
+Local Repository - once committed performing the push will move the change to the remote repo.
 
 
 
