@@ -35,6 +35,24 @@ git commit --amend
 
 changes the last commit
 
+Reverting a change already pushed to the remote repo
+git reset --hard HEAD~1
+git push --force
+
+DON'T DO THIS IN MASTER OR DEVELOP BRANCH!
+
+other developers will have an issue with refs because they have the previous commit already im their local repo
+
+ONLY WHEN WORKING ALONE IN A BRANCH
+
+git commit revert <commit hash>
+creates a new commit to revert the old commit's changes
+
+git reset <commit hash>
+Removes old commit
+
+
+
 # Usage
 
 git log
@@ -60,6 +78,3 @@ Date:   Thu Jun 13 17:13:41 2024 -0400
  michaelbradley@Michaels-iMac-2 DevOps % git reset --hard HEAD~1
 HEAD is now at 84cafba updated soft and amend
 michaelbradley@Michaels-iMac-2 DevOps % 
-
-
-
