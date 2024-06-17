@@ -1,44 +1,18 @@
 # Chapter4
-This module we review common concepts and differences of build tools.
+This module we review how to publish artifact into repository.
 
-# Name: Common Concepts and Different of Build Tools
+# Name: Pubish artifact into Repository
 
 # Description: 
 
-Other Programming Languages
+Push/Publish artifact into the artifactory
 
-What are Build Tools for other programming languages?
+Build tools have commands for that!
 
-    These concepts are similar to other languages
+Then you can download (curl, wget) it anywhere
 
-    Pip package manager for Python
+Artifacts are published to a repository and made available for developers to pull.
 
-Patterns in all of these tools
-
-    Each has its own dependency file
-
-        package.json
-        pom.xml
-        build.gradle
-        test
-        start app
-        build app
-
-    Repository for dependencies
-
-    Command line tool
-
-    package managers
-
-        gradle
-
-        maven
-
-        npm
-
-        yarn
-
-        pip
 
 # Usage
 
