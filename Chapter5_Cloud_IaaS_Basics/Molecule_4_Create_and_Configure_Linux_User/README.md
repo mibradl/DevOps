@@ -39,9 +39,9 @@ Create a separate Linux User that is not Root
         mike@ubuntu-s-2vcpu-4gb-amd-nyc3-01:~$ pwd
         /home/mike
 
-$ = standard Linux User
+"$ = standard Linux User"
 
-# = Root User
+"# = Root User"
 
         michaelbradley@Michaels-iMac-2 DevOps % ssh mike@164.90.128.228
         
