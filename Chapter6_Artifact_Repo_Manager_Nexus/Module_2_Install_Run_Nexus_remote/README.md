@@ -115,7 +115,9 @@ Starting Nexus
     nexus       4817  0.0  0.0  11320  4352 pts/0    R+   03:54   0:00 ps aux
     nexus       4818  0.0  0.0   7076  2048 pts/0    S+   03:54   0:00 grep --color=auto nexus
 
+    add firewall rules to open custom tcp port 8081
 
+    157.230.238.59:8081
 
 
 
