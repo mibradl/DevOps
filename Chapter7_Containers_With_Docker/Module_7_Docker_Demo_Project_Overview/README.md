@@ -1,9 +1,20 @@
 # Chapter7
-This module we explore what a Container is.
+This module we will review the Demo Project
 
-# Name: What is a Container?
+# Name: Demo Overview
 
 # Description: 
+
+Basic building blocks of Docker
+
+How Docker fits in in the complete development and deployment process?
+
+
+
+
+Overview of the complete process
+
+Zoom in into different parts
 
 
 
