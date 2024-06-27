@@ -42,7 +42,7 @@ Docker Volumes in practice
 
         1. host volume name
 
-        2. path inside ofthe container - /data/db is the default location where data is written inside the container
+        2. path inside of the container - /data/db is the default location where data is written inside the container
 
         mongo-data the host name is attaching the path on the containter
 
@@ -60,7 +60,7 @@ Docker Volumes in practice
             docker-compose up - Builds, recreates containers
 
 
-        Attaches volume storage to the newly started container and replicate the data inside the container, and we achieve data persistence inside the container.
+        Attaches volume storage to the newly started container and replicate the data inside the container, and we achieve data persistence inside the             container.
 
 
         See where docker volumes are located
