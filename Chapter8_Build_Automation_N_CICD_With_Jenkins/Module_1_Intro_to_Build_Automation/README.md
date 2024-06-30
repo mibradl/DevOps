@@ -1,7 +1,7 @@
 # Chapter8
 This module we will introduce the Jenkins Build Automation.
 
-# Name: Introdution to Build Automation?
+# Name: Introduction to Build Automation?
 
 # Description: 
 
@@ -132,7 +132,7 @@ What is Build  Automation?
 
         Plugins, credentials etc. can be used for different projects
 
-        
+
 
 
 
