@@ -108,7 +108,7 @@ Jenkins Container
 
 
         docker build -t bradlmi/demo-app:jma-2.1 .
-        echo $PASSWORD docker login -u $USERNAME --password-stdin
+        echo $PASSWORD | docker login -u $USERNAME --password-stdin
         docker push bradlmi/demo-app:jma-2.1
 
         + echo **** docker login -u bradlmi --password-stdin
