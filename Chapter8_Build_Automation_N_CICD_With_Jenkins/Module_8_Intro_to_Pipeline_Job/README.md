@@ -119,7 +119,7 @@ In this module we will configure a Pipeline.
                             you can define as many stages as you want
 
 
-                            Normall it looks something like this
+                            Normally it looks something like this
 
 
 pipeline {
@@ -142,6 +142,58 @@ pipeline {
         }
     }
 }
+
+
+Advantages of using Pipeline versus Freestyle
+
+    Pipleline Job, using scripting
+
+        If you want to exeute 2 tasks in parallel 
+
+        You need user input
+
+        Conditional statement
+
+        Progamatically update the job using groogy
+
+        Set varialbe
+
+        Not
+         limited
+
+        Is a superset of free stye jobs
+
+        Simplifies the process, so it's far lest complex and less maintenance
+
+
+
+
+    Freestyle
+
+
+            Chained Freestyle Jobs is undesirable, using a UI
+
+                In order to build a CI/CD platform would require 6 or more jobs
+
+                Must manage all jobs and their plugins
+
+                To switch from maven to gradle you must change in each and every job
+
+            Because relying on pluging
+
+            Different plugins in multiple jobs
+
+            Must manage those plugins, at a high maintenance cost
+
+
+        
+
+
+
+
+
+
+
 
 # Usage
 
