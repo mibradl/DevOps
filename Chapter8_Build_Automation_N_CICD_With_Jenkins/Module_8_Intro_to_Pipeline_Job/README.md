@@ -128,9 +128,6 @@ pipeline {
         stage("build") {
             steps {
                 echo "building the application"
-                sh 'npm install'
-                sh 'npm build'
-
             }
         }
         stage("test") {
