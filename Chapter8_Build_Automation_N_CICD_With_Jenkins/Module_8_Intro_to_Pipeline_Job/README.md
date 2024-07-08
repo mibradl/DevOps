@@ -148,5 +148,57 @@ pipeline {
 
 # Usage
 
-
+Started by user michael
+Obtained Jenkinsfile from git https://gitlab.com/drmibradl/java-maven-app.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/my-pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git
+using credential docker-hub-repo
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/my-pipeline/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://gitlab.com/drmibradl/java-maven-app.git # timeout=10
+Fetching upstream changes from https://gitlab.com/drmibradl/java-maven-app.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://gitlab.com/drmibradl/java-maven-app.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/jenkins-pipe^{commit} # timeout=10
+Checking out Revision f94be2740fbb5a8d0bc06e5eea3577783b7dfbf1 (refs/remotes/origin/jenkins-pipe)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f94be2740fbb5a8d0bc06e5eea3577783b7dfbf1 # timeout=10
+Commit message: "add new Jenkinsfile"
+ > git rev-list --no-walk f94be2740fbb5a8d0bc06e5eea3577783b7dfbf1 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (build)
+[Pipeline] echo
+building the application
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (test)
+[Pipeline] echo
+testing the application
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (deploy)
+[Pipeline] echo
+deploying the application
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
     
