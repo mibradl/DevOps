@@ -474,7 +474,43 @@ Create three different functions
             }
         }
 
+    Results
+
+    building the docker image...
+    Print Message
+    13 ms
+    docker build -t bradlmi/demo-app:jma-4.0 .
+    Shell Script
+    0.82 sec
+    echo '${PASS}' | docker login -u 'bradlmi' --password-stdin
+    Shell Script
+    0.29 sec
+    docker push bradlmi/demo-app:jma-4.0
+    Shell Script
+
+
+Project scoped Shared Library
+
+    Dashboard ---> Manage Jenkins ---> System
+
+    Delete Global Pipeline Library
+
+    Save
+
     
+    In the Jenkinsfile the @Library statement will no longer work, because it was previously deleted in Jenkins.
+
+    Delete this line - @Library('jenkins-shared-library') and replace with library method
+
+
+    Jenkinsfile was configured to include shared library scoped at the project level and demonstrates same resources are accessible.
+
+        #!/usr/bin/env groovy
+
+        library identifier: 'jenkins-shared-library@master', retriever: modernSCM(
+                [$class: 'GitSCMSource',
+                remote: 'https://gitlab.com/drmibradl/jenkins-shared-library.git',
+                credentialsId: 'gitlab-credentials'])
 
 
 
@@ -689,6 +725,322 @@ b2a6aa582d9a: Layer already exists
 jma-3.0: digest: sha256:1fc3097d4940c2c9198ddc27e81953a2747343f7444d1110ab861621e5c9f306 size: 1158
 [Pipeline] }
 [Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (deploy)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+deploying the application...
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+
+
+Split into Separate Steps
+
+building the docker image...
+Print Message
+13 ms
+building the docker image...
+docker build -t bradlmi/demo-app:jma-4.0 .
+Shell Script
+0.82 sec
++ docker build -t bradlmi/demo-app:jma-4.0 .
+#0 building with "default" instance using docker driver
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.0s
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 216B done
+#2 DONE 0.0s
+#3 [auth] library/amazoncorretto:pull token for registry-1.docker.io
+#3 DONE 0.0s
+#4 [internal] load metadata for docker.io/library/amazoncorretto:8-alpine3.17-jre
+#4 DONE 0.2s
+#5 [1/3] FROM docker.io/library/amazoncorretto:8-alpine3.17-jre@sha256:91f50a87eff28ce56ff7d28c1638775e00baa11e34ff0e6fd2e38cbcbc56b75e
+#5 DONE 0.0s
+#6 [internal] load build context
+#6 transferring context: 90B done
+#6 DONE 0.0s
+#7 [2/3] COPY ./target/java-maven-app-*.jar /usr/app/
+#7 CACHED
+#8 [3/3] WORKDIR /usr/app
+#8 CACHED
+#9 exporting to image
+#9 exporting layers done
+#9 writing image sha256:e749ff38d3fdfe6a4ca465d06d3d3e25882f6186fefbbca15326cc002a82cd81 done
+#9 naming to docker.io/bradlmi/demo-app:jma-4.0 done
+#9 DONE 0.0s
+echo '${PASS}' | docker login -u 'bradlmi' --password-stdin
+Shell Script
+0.29 sec
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [PASS]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ echo ****
++ docker login -u bradlmi --password-stdin
+WARNING! Your password will be stored unencrypted in /var/jenkins_home/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credential-stores
+Login Succeeded
+docker push bradlmi/demo-app:jma-4.0
+Shell Script
+0.52 sec
++ docker push bradlmi/demo-app:jma-4.0
+The push refers to repository [docker.io/bradlmi/demo-app]
+5f70bf18a086: Preparing
+5eb30fbcef3f: Preparing
+5014d7f17bcd: Preparing
+b2a6aa582d9a: Preparing
+b2a6aa582d9a: Layer already exists
+5014d7f17bcd: Layer already exists
+5f70bf18a086: Layer already exists
+5eb30fbcef3f: Layer already exists
+jma-4.0: digest: sha256:1fc3097d4940c2c9198ddc27e81953a2747343f7444d1110ab861621e5c9f306 size: 1158
+
+
+Scoping Shared Library on project level
+
+Started by user michael
+ > git rev-parse --resolve-git-dir /var/jenkins_home/caches/git-5cad553192de71d9d989926c524f1ea6/.git # timeout=10
+Setting origin to https://gitlab.com/drmibradl/java-maven-app.git
+ > git config remote.origin.url https://gitlab.com/drmibradl/java-maven-app.git # timeout=10
+Fetching origin...
+Fetching upstream changes from origin
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+ > git config --get remote.origin.url # timeout=10
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- origin +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/feature/payment
+Seen branch in repository origin/jenkins-jobs
+Seen branch in repository origin/jenkins-pipe
+Seen branch in repository origin/jenkins-shared-lib
+Seen branch in repository origin/master
+Seen branch in repository origin/starting-code
+Seen 6 remote branches
+Obtained Jenkinsfile from 194cd966498882472b692db97387394610b8e4e6
+[Pipeline] Start of Pipeline
+[Pipeline] library
+Loading library jenkins-shared-library@master
+Attempting to resolve master from remote references...
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+ > git ls-remote -- https://gitlab.com/drmibradl/jenkins-shared-library.git # timeout=10
+Found match: refs/heads/master revision 2cb6d42911165440d78306505bfff72267635f16
+The recommended git tool is: NONE
+Warning: CredentialId "gitlab-credentials" could not be found.
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/ava-maven-app_jenkins-shared-lib@libs/6f8eef6a0257cf201e7ff69679e1215f07b561cf2db734ee5d3d03d8631920f5/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://gitlab.com/drmibradl/jenkins-shared-library.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://gitlab.com/drmibradl/jenkins-shared-library.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+ > git fetch --no-tags --force --progress -- https://gitlab.com/drmibradl/jenkins-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision 2cb6d42911165440d78306505bfff72267635f16 (master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 2cb6d42911165440d78306505bfff72267635f16 # timeout=10
+Commit message: "correct name of buildDockerImage to match function"
+ > git rev-list --no-walk 2cb6d42911165440d78306505bfff72267635f16 # timeout=10
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/ava-maven-app_jenkins-shared-lib
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git
+using credential 6fafcc34-bd15-4440-8151-b68c1754898a
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/ava-maven-app_jenkins-shared-lib/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://gitlab.com/drmibradl/java-maven-app.git # timeout=10
+Fetching without tags
+Fetching upstream changes from https://gitlab.com/drmibradl/java-maven-app.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --no-tags --force --progress -- https://gitlab.com/drmibradl/java-maven-app.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Checking out Revision 194cd966498882472b692db97387394610b8e4e6 (jenkins-shared-lib)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 194cd966498882472b692db97387394610b8e4e6 # timeout=10
+Commit message: "corrected repo definition"
+ > git rev-list --no-walk 36509e5bed08884e23023bef0861145dc6ad8ca5 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (init)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] load
+[Pipeline] { (script.groovy)
+[Pipeline] }
+[Pipeline] // load
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (build jar)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+building the application for branch jenkins-shared-lib
+[Pipeline] sh
++ mvn package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.example:java-maven-app >---------------------
+[INFO] Building java-maven-app 1.1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ java-maven-app ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.6.0:compile (default-compile) @ java-maven-app ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ java-maven-app ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/ava-maven-app_jenkins-shared-lib/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.6.0:testCompile (default-testCompile) @ java-maven-app ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ java-maven-app ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ java-maven-app ---
+[INFO] 
+[INFO] --- spring-boot:2.3.5.RELEASE:repackage (default) @ java-maven-app ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.709 s
+[INFO] Finished at: 2024-07-15T20:41:02Z
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (build and push image)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+building the docker image...
+[Pipeline] sh
++ docker build -t bradlmi/demo-app:jma-4.0 .
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 216B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [auth] library/amazoncorretto:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [internal] load metadata for docker.io/library/amazoncorretto:8-alpine3.17-jre
+#4 DONE 0.2s
+
+#5 [1/3] FROM docker.io/library/amazoncorretto:8-alpine3.17-jre@sha256:91f50a87eff28ce56ff7d28c1638775e00baa11e34ff0e6fd2e38cbcbc56b75e
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 90B done
+#6 DONE 0.0s
+
+#7 [2/3] COPY ./target/java-maven-app-*.jar /usr/app/
+#7 CACHED
+
+#8 [3/3] WORKDIR /usr/app
+#8 CACHED
+
+#9 exporting to image
+#9 exporting layers done
+#9 writing image sha256:e749ff38d3fdfe6a4ca465d06d3d3e25882f6186fefbbca15326cc002a82cd81 done
+#9 naming to docker.io/bradlmi/demo-app:jma-4.0 done
+#9 DONE 0.0s
+[Pipeline] withCredentials
+Masking supported pattern matches of $PASS
+[Pipeline] {
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [PASS]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ echo ****
++ docker login -u bradlmi --password-stdin
+WARNING! Your password will be stored unencrypted in /var/jenkins_home/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credential-stores
+
+Login Succeeded
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] sh
++ docker push bradlmi/demo-app:jma-4.0
+The push refers to repository [docker.io/bradlmi/demo-app]
+5f70bf18a086: Preparing
+5eb30fbcef3f: Preparing
+5014d7f17bcd: Preparing
+b2a6aa582d9a: Preparing
+b2a6aa582d9a: Layer already exists
+5f70bf18a086: Layer already exists
+5014d7f17bcd: Layer already exists
+5eb30fbcef3f: Layer already exists
+jma-4.0: digest: sha256:1fc3097d4940c2c9198ddc27e81953a2747343f7444d1110ab861621e5c9f306 size: 1158
 [Pipeline] }
 [Pipeline] // script
 [Pipeline] }
