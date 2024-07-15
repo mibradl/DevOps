@@ -202,7 +202,7 @@ Make Shared Library globally available
 
             Create New Branch in gitlab
 
-            SelectNew Branch
+            Select New Branch
 
             Branch name: jenkins-shared-lib
 
