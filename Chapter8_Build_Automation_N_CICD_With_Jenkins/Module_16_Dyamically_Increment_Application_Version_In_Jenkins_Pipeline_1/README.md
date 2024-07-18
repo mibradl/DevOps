@@ -1,13 +1,11 @@
 # Chapter8
-This module we will do Jenkins Basics - Demo.
+This module we will learn how to version your application.
 
-# Name: Jenkins Basics - Demo
+# Name: Dynamically Increment Application Version in Jenkins Pipeline - Part 1
 
 # Description: 
 
-Create simple Freestyle Job
-
-Plugin Configuration
+Versioning your Application
 
 
 # Usage

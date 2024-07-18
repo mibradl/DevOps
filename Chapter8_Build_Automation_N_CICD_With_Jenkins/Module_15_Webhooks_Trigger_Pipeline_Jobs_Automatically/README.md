@@ -94,7 +94,7 @@ How to trigger Jenkins Build Jobs?
 
                             API Token 
 
-                            glpat-EBmjdzSz3a5B7ZSPGzdT (encrypted)
+                            **************************************** (encrypted)
 
                             ID: gitlab-token
 
