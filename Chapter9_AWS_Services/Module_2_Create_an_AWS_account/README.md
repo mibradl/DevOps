@@ -1,13 +1,17 @@
-# Chapter8
-This module we will do Jenkins Basics - Demo.
+# Chapter9
+This module we will create an AWS Account
 
-# Name: Jenkins Basics - Demo
+# Name: Create an AWS Account
 
 # Description: 
 
-Create simple Freestyle Job
+Creating an account
 
-Plugin Configuration
+    1-year free tier for some services
+
+    Go to the site and create your account.
+
+    
 
 
 # Usage
