@@ -168,7 +168,7 @@ Perform build from Jenkins
     [ec2-user@ip-172-31-89-89 ~]$ 
 
 
-Replace Docker image with newly build verion
+Replace Docker image with new build version
 
     When Jenkins pipeline runs: new docker image verion is built and pushed to repo
 
