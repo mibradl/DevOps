@@ -1,4 +1,4 @@
-# Chapter8
+# Chapter9
 This module we will introduce the Elastic Compute Cloud (EC2)
 
 # Name: Introduction to EC2 Virtual Cloud Server
@@ -16,7 +16,7 @@ Intro to Elastic Compute Cloud
 
         Deploy Web Application on EC2 instance
 
-            1) Create EC2 instance on AWS
+                Create EC2 instance on AWS
 
                 From Console Home select EC2 to enter EC2 Dashboard view
 

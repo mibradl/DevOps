@@ -101,12 +101,14 @@ In previous Jenkins Module
             Connect to EC2 and run Docker command
 
             stage("deploy") {
-            steps {
-                script {
-                    def dockerCmd = 'docker run -p 3080:3080 -d bradlmi/demo-app:aap-1.0'
-                    sshagent(['ec2-server-key']) {
-                        sh "ssh -o StrictHostKeyChecking=no ec2-user@44.203.54.164 ${dockerCmd}"                //required to turn off pop up
+                steps {
+                    script {
+                        def dockerCmd = 'docker run -p 3080:3080 -d bradlmi/demo-app:aap-1.0'
+                        sshagent(['ec2-server-key']) {
+                            sh "ssh -o StrictHostKeyChecking=no ec2-user@44.203.54.164 ${dockerCmd}"                //required to turn off pop up
                     }
+                }
+            }
 
 
 
