@@ -138,6 +138,9 @@ Improvement: Extract to Shell Script
     CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 
+
+Perform build from Jenkins
+
     [Pipeline] sh
     + scp server-cmds.sh ec2-user@44.203.54.164:/home/ec2-user
     [Pipeline] sh
