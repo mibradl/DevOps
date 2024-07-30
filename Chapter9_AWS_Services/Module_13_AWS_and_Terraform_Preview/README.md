@@ -1,13 +1,33 @@
 # Chapter8
-This module we will do Jenkins Basics - Demo.
+This module we will look at AWS and Infrastructure as Code
 
-# Name: Jenkins Basics - Demo
+# Name: AWS and Terraform Preview
 
 # Description: 
 
-Create simple Freestyle Job
+Before Infrastructure as Code
 
-Plugin Configuration
+        Many commands to execute
+
+        No Overview
+
+Automation Tools
+
+        Consistency and Reproducibility
+
+        Automation and Speed
+
+        Keeping track of history
+
+Infrastructure as Code
+
+        Terraform
+
+            Provision infrastructure
+
+            Create and manage resources
+
+
 
 
 # Usage
