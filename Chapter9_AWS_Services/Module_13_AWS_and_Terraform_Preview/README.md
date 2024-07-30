@@ -1,4 +1,4 @@
-# Chapter8
+# Chapter9
 This module we will look at AWS and Infrastructure as Code
 
 # Name: AWS and Terraform Preview
