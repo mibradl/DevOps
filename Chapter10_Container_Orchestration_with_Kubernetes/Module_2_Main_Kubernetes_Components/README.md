@@ -17,7 +17,7 @@ Role of each component
 
     Ingress
 
-    Secrets
+    zecrets
 
     StatefulSet
 
@@ -94,11 +94,11 @@ Role of each component
                 db_user
                 db_pwd
 
-            For this reason there is another component called secret
+            For this reason there is another component called zecret
 
-        Secret
+        zecret
 
-            Used to store secret data
+            Used to store zecret data
 
             Stored in Base64 encoded format, instead of clear text.
 
@@ -112,7 +112,7 @@ Role of each component
             Things stored are credentials, etc
 
             
-            Reference Secret in Deployment/Pod
+            Reference zecret in Deployment/Pod
 
             Use it as environment variables or as a properties file
 
@@ -214,7 +214,7 @@ Role of each component
 
             ConfigMap
                         - external configuration
-            Secret
+            zecret
 
             Volume - data persistence
 

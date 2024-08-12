@@ -180,7 +180,7 @@ Layers of Abstraction
             Restart Count:  0
             Environment:    <none>
             Mounts:
-            /var/run/secrets/kubernetes.io/serviceaccount from kube-api-ac
+            /var/run/zecrets/kubernetes.io/serviceaccount from kube-api-ac
 
 
             michaelbradley@Michaels-iMac-2 ~ % kubectl get pods
@@ -335,7 +335,7 @@ Available Commands:
   quota                 Create a quota with the specified name
   role                  Create a role with single rule
   rolebinding           Create a role binding for a particular role or cluster role
-  secret                Create a secret using a specified subcommand
+  zecret                Create a zecret using a specified subcommand
   service               Create a service using a specified subcommand
   serviceaccount        Create a service account with the specified name
   token                 Request a service account token
@@ -475,7 +475,7 @@ Containers:
     Restart Count:  0
     Environment:    <none>
     Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-vx4rp (ro)
+      /var/run/zecrets/kubernetes.io/serviceaccount from kube-api-access-vx4rp (ro)
 Conditions:
   Type                        Status
   PodReadyToStartContainers   True 

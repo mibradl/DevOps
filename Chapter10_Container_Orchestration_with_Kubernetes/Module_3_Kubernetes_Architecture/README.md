@@ -137,7 +137,16 @@ Kubernetes Architecture
 
                 Control Plan Nodes have less workload and therefore need fewer resources
 
-                Worker Nodes have higher workload with the containers inside and therefore require more resources.         
+                Worker Nodes have higher workload with the containers inside and therefore require more resources.  
+
+
+        To add new Control Plane / Node server:
+
+                Get new bare metal server 
+
+                Install all the control plane / worker node processes  
+
+                Join to the cluster    
 
 
 
