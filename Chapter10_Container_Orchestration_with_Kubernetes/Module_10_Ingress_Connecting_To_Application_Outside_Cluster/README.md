@@ -195,7 +195,141 @@ How to configure Ingress
 
               Once the resources are running for pod and service dashboard the rules can be created
 
+
+              Run kubectl apply -f dashboard-ingress.yaml
+
+
+               minikube tunnel
+
+              ✅  Tunnel successfully started
+
+              📌  NOTE: Please do not close this terminal as this process must stay alive for the tunnel to be accessible ...
+
+              🏃  Starting tunnel for service mongo-express-service.
+              ❗  The service/ingress dashboard-ingress requires privileged ports to be exposed: [80 443]
+              🔑  sudo permission will be asked for it.
+              🏃  Starting tunnel for service dashboard-ingress.
+
+
+              Multiple paths for same host
+
+              http://myapp.com/analytics
+                        |
+                        V
+              analytics service
+                        |
+                        V
+              analytics pod
+
+
+              http://myapp.com/shopping
+                        |
+                        V
+              shopping service
+                        |
+                        V
+              shopping pod
+
+              apiVersion: networking.k8s.io/v1
+              kind: Ingress
+              metadata:
+                name: simple-fanout-example
+                annotations:
+                  nginx.ingress.kubernetes.io/rewrite-target: /
+              spec:
+                rules:
+                - host: myapp.com
+                  http:
+                    paths:
+                      - path: /analytics
+                        backend:
+                          service:
+                            name: analytics-service
+                            port:
+                              number: 3000
+                      - path: /analytics
+                        backend:
+                          service:
+                            name: analytics-service
+                            port:
+                              number: 8080
+
+              Multijple sub-domains or plugins
+
+
+              Instead of:
+
+                      http://myapp.com/analytics
+
+
+                      http://analytics.myapp.com
+
+
+              Instead of 1 hosts and multipe paths
+
+              You have multiple hosts with 1 path.
+              Each host represents a subdomain
+
+
+
+          Configuring TLS Certificate - https://
+
+          tls
+
+          secretName
+
+
+
+              apiVersion: networking.k8s.io/v1
+              kind: Ingress
+              metadata:
+                name: tls-example-ingress
+              spec:
+                tls:
+                - hosts: 
+                  - myapp.com
+                  secretName: myapp-secret-tls                                secret name
+                rules:
+                - host: myapp.com
+                  http:
+                    paths:
+                      - path: /analytics
+                        backend:
+                          service:
+                            name: myapp-internal-service
+                            port:
+                              number: 8080
+
+
+              apiVersion: v1
+              kind: Secret
+              metadata:
+                name: myapp-secret-tls                                        secret name
+                namespace: default
+              data:
+                tls.crt: base64 encoded cert
+                tls.key: base64 encoded key
+              type: kubernetes.io/tls
+
+
+
+
+              Data keys need to be "tls.crt" and "tls.key"
+
+              Values are file contents Not file paths/location
+
+              Secret component must be in the saem namespace as the Ingress component, can't reference a secret from another namespace
               
+                    
+
+
+
+
+
+
+
+
+                
 
 
 
@@ -229,3 +363,12 @@ deployment.apps/kubernetes-dashboard        1/1     1            1           92m
 NAME                                                  DESIRED   CURRENT   READY   AGE
 replicaset.apps/dashboard-metrics-scraper-b5fc48f67   1         1         1       92m
 replicaset.apps/kubernetes-dashboard-779776cb65       1         1         1       92m
+
+Create Ingress Dashboard
+
+kubectl apply -f dashboard-ingress.yaml 
+ingress.networking.k8s.io/dashboard-ingress created
+
+kubectl get ingress -n kubernetes-dashboard
+NAME                CLASS    HOSTS           ADDRESS   PORTS   AGE
+dashboard-ingress   <none>   dashboard.com             80      3m9s
