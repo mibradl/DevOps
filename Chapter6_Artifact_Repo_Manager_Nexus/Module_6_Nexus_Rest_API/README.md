@@ -116,7 +116,7 @@ michaelbradley@Michaels-iMac-2 new-project %  curl -u michael:Greater16 -X GET '
   "type" : "hosted",
   "url" : "http://157.230.238.59:8081/repository/maven-snapshots",
   "attributes" : { }
-} ]%                                                                                                                                                                                                          michaelbradley@Michaels-iMac-2 new-project %  curl -u admin:Greater16 -X GET 'http://157.230.238.59:8081/service/rest/v1/repositories'
+} ]%                                                                                                                                                  michaelbradley@Michaels-iMac-2 new-project %  curl -u admin:Greater16 -X GET 'http://157.230.238.59:8081/service/rest/v1/repositories'
 [ {
   "name" : "nuget-hosted",
   "format" : "nuget",
