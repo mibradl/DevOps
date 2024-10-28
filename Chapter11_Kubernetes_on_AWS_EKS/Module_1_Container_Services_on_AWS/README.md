@@ -238,7 +238,7 @@ Overview
 
     Worker Nodes
 
-        You infrastructure that actually runs your Nodes and Pods
+        Your infrastructure that actually runs your Nodes and Pods
 
         You will create EC2 instances
 

@@ -687,37 +687,26 @@ Create EKS Cluster Manually (UI) Part 1
                     Name
 	
 
+            Worker Processes needs to be installed
+
+            With Node Group all necessary processes are installed
+
+                Container-d
+
+                kubelet
+
+                Node
+
+                k-proxy
 
 
-                        
+            Save infrastructure costs with an AutoScaler
 
+                Node group scaling configuration
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    Desired size
+                    Minimum size
+                    Maximum size
 
 
 # Usage
@@ -730,17 +719,18 @@ Added new context arn:aws:eks:us-east-1:211125391769:cluster/eks_cluster-test to
 
 % kubectl get ns
 NAME                   STATUS   AGE
-default                Active   64d
-kube-node-lease        Active   64d
-kube-public            Active   64d
-kube-system            Active   64d
-kubernetes-dashboard   Active   60d
+default                Active   5m
+kube-node-lease        Active   5m
+kube-public            Active   5m
+kube-system            Active   5m
+
+kubectl cluster-info
+Kubernetes control plane is running at https://1D310AB75469D3BF1E5FAD34B201388C.gr7.us-east-1.eks.amazonaws.com
+CoreDNS is running at https://1D310AB75469D3BF1E5FAD34B201388C.gr7.us-east-1.eks.amazonaws.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 
-    
+% kubectl get nodes 
+NAME                                STATUS   ROLES      AGE   VERSION
+ip-192-168-54-175.ec2.internal      Ready    <nodes>    37s   v1.30.4-eks-a737599
+ip-192-168-96-248.ec2.internal      Ready    <nodes>    39s   v1.30.4-eks-a737599
 
-
-
-
-% kubectl get pod 
-NAME                         READY   STATUS    RESTARTS      AGE
