@@ -357,7 +357,7 @@ Create EKS Cluster Manually (UI) Part 1
                 secret_key     ****************6tqJ shared-credentials-file    
                 **region                us-east-1      config-file    ~/.aws/config
 
-                The region has already been create and this is where the cluster will run
+                The region has already been created and this is where the cluster will run
 
                 aws eks update-kubeconfig --name eks_cluster-test
 
