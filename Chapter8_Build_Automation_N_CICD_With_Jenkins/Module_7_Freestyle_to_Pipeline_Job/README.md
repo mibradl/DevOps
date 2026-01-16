@@ -105,6 +105,23 @@ jma-1.0
 
 Image	less than 1 day	7 minutes
 
+**Pushed artifact to docker hub using --password-stdin
+
+docker build -t mibradl/demo-app:jma-1:1
+echo $PASSWORD | docker login -u $USERNAME --password-stdin
+docker push mibradl/demo-app:jma-1
+
+This repository contains 2 tag(s).
+
+Tag	OS	Type	Pulled	Pushed
+jma-1.1
+
+Image	less than 1 day	5 minutes
+jma-1.0
+
+Image	less than 1 day	19 minutes
+
+
 
 # Usage
 
@@ -246,5 +263,28 @@ The push refers to repository [docker.io/mibradl/demo-app]
 5f70bf18a086: Mounted from library/redis
 6652f16cab36: Pushed
 jma-1.0: digest: sha256:bd9198556882f92974dbc4794ff51f1f748670e3a941cc9bba1cc318e37c08f0 size: 1158
+Finished: SUCCESS
+
+**Second push with echo $PASSWORD | Docker login -u $USERNAME --password-stdin 
+
+#9 naming to docker.io/mibradl/demo-app:jma-1.1 done
+#9 DONE 0.1s
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 8)
++ echo ****
++ docker login -u mibradl --password-stdin
+Login Succeeded
++ docker push mibradl/demo-app:jma-1.1
+The push refers to repository [docker.io/mibradl/demo-app]
+5f70bf18a086: Preparing
+3e93593d8fb3: Preparing
+432a00a9effe: Preparing
+8d78b2117a5b: Preparing
+8d78b2117a5b: Layer already exists
+5f70bf18a086: Layer already exists
+432a00a9effe: Layer already exists
+3e93593d8fb3: Pushed
+jma-1.1: digest: sha256:c8d7dc978d32dc9c60ff57881f8de9558c22ae535d027648c893c84a829fb9da size: 1158
 Finished: SUCCESS
     
