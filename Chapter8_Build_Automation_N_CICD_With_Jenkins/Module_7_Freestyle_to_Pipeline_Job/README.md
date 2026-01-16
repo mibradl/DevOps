@@ -84,6 +84,13 @@ e5a35462b9a7: Pull complete
 
 **Demo - Added Docker to the image using the docker volume previously mounted on the host. Pulled new image from docker and performed docker build -t java-maven-app:1.0 . from within jenkens shell. Results in #Usage.
 
+jenkins@ba4eaddd55cd:/$ docker images
+                                                                                                                                            i Info →   U  In Use
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+java-maven-build:1.0   2f78e437c0bb        133MB             0B        
+jenkins/jenkins:lts    75109de20007        499MB             0B        
+redis:latest           63e868dc880e        139MB             0B 
+
 
 # Usage
 
