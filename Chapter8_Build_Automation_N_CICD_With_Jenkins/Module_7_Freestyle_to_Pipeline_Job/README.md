@@ -50,11 +50,24 @@ Will begin to understand the fundamental advantages and disadvantages
 
     Executing tools
 
+**Demo - Execute chmod -x freestyle-build.sh & ./freestyle-build.sh to Jenkins Gitlab branch Jenkins-jobs and execute npm --version from within the script.
+
     
 
 
 
 # Usage
 
-
+...
+[my-job] $ /bin/sh -xe /tmp/jenkins21625878587323667.sh
++ chmod +x freestyle-build.sh
++ ./freestyle-build.sh
+10.8.2
+[my-job] $ /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven-3.9/bin/mvn --version
+Apache Maven 3.9.12 (848fbb4bf2d427b72bdb2471c22fced7ebd9a7a1)
+Maven home: /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven-3.9
+Java version: 21.0.9, vendor: Eclipse Adoptium, runtime: /opt/java/openjdk
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "6.8.0-71-generic", arch: "amd64", family: "unix"
+Finished: SUCCESS
     
