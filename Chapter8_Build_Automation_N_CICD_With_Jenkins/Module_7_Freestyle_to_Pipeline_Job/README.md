@@ -125,11 +125,9 @@ Image	less than 1 day	19 minutes
 
 **Push to Nexus repo
 
-docker build -t mibradl/demo-app:1:0
-echo $PASSWORD | docker login -u $USERNAME --password-stdin
-docker push mibradl/demo-app:jma-1
-
-
+docker build -t 157.230.238.59:8081/demo-app:1:0
+echo $PASSWORD | docker login -u $USERNAME --password-stdin 157.230.238.59:8081
+docker push 157.230.238.59:8081/demo-app:1:0
 
 
 
