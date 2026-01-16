@@ -91,6 +91,12 @@ java-maven-build:1.0   2f78e437c0bb        133MB             0B
 jenkins/jenkins:lts    75109de20007        499MB             0B        
 redis:latest           63e868dc880e        139MB             0B 
 
+**Pushed artifact to docker hub
+
+docker build -t mibradl/demo-app:jma-1:0
+docker login -u $USERNAME -p $PASSWORD
+docker push mibradl/demo-app:jma-1:0
+
 
 # Usage
 
@@ -215,5 +221,22 @@ package jar
 
  [33m1 warning found (use docker --debug to expand):
 [0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 8)
+Finished: SUCCESS
+
+
+**Push to docker hub
+
+Login Succeeded
++ docker push mibradl/demo-app:jma-1.0
+The push refers to repository [docker.io/mibradl/demo-app]
+5f70bf18a086: Preparing
+6652f16cab36: Preparing
+432a00a9effe: Preparing
+8d78b2117a5b: Preparing
+8d78b2117a5b: Mounted from library/amazoncorretto
+432a00a9effe: Mounted from library/amazoncorretto
+5f70bf18a086: Mounted from library/redis
+6652f16cab36: Pushed
+jma-1.0: digest: sha256:bd9198556882f92974dbc4794ff51f1f748670e3a941cc9bba1cc318e37c08f0 size: 1158
 Finished: SUCCESS
     
