@@ -98,6 +98,14 @@ docker login -u $USERNAME -p $PASSWORD
 docker push mibradl/demo-app:jma-1:0
 
 
+This repository contains 0 tag(s).
+
+Tag	OS	Type	Pulled	Pushed
+jma-1.0
+
+Image	less than 1 day	7 minutes
+
+
 # Usage
 
 ...
