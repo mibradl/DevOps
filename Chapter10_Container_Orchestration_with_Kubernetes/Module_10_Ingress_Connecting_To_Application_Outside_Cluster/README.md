@@ -71,7 +71,7 @@ External vs Ingress
         - host: myapp.com
             http:                                                           Forward request to the internal service
             paths:                                          
-                - path: /                                                   http://my-app.com  would be issued in the brower
+                - path: /                                                   http://my-app.com  would be issued in the browser
                 pathType: Prefix                                            This is the uri following the url
                 backend:
                     service:
