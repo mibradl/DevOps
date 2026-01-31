@@ -10,7 +10,7 @@ Kubernetes Services
 
     What is a Kubernetes Service and when we need it?
 
-    Different Service types explainee
+    Different Service types explained
 
         ClusterIP Service
 
